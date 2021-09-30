@@ -51,7 +51,7 @@ export const constantRoutes = [
       path: 'dashboard',
       name: 'Dashboard',
       component: () => import('@/views/dashboard/index'),
-      meta: { title: 'Dashboard', icon: 'dashboard' }
+      meta: { title: '控制台', icon: 'dashboard', auth: true }
     }]
   },
 
@@ -157,7 +157,7 @@ export const constantRoutes = [
         path: 'index',
         name: 'Title',
         component: () => import('@/views/title/index'),
-        meta: { title: '首页标题', icon: 'form' }
+        meta: { title: '首页标题', icon: 'form', auth: true }
       }
     ]
   },
@@ -171,19 +171,19 @@ export const constantRoutes = [
         path: 'blogList',
         name: 'BlogList',
         component: () => import('@/views/blog/blogList'),
-        meta: { title: '文章列表', icon: 'form' }
+        meta: { title: '文章列表', icon: 'form', auth: true }
       },
       {
         path: 'blogCategory',
         name: 'BlogCategory',
         component: () => import('@/views/blog/blogCategory'),
-        meta: { title: '文章分类', icon: 'form' }
+        meta: { title: '文章分类', icon: 'form', auth: true }
       },
       {
         path: 'blogAdd',
         name: 'BlogAdd',
         component: () => import('@/views/blog/blogAdd'),
-        meta: { title: '添加列表', icon: 'form' }
+        meta: { title: '添加列表', icon: 'form', auth: true }
       }
     ]
   },
@@ -197,13 +197,13 @@ export const constantRoutes = [
         path: 'projectList',
         name: 'ProjectList',
         component: () => import('@/views/projects/projectList'),
-        meta: { title: '项目列表', icon: 'form' }
+        meta: { title: '项目列表', icon: 'form', auth: true }
       },
       {
         path: 'projecAdd',
         name: 'ProjecAdd',
         component: () => import('@/views/projects/projectAdd'),
-        meta: { title: '添加项目', icon: 'form' }
+        meta: { title: '添加项目', icon: 'form', auth: true }
       }
     ]
   },
@@ -216,7 +216,7 @@ export const constantRoutes = [
         path: 'index',
         name: 'Comment',
         component: () => import('@/views/comment/index'),
-        meta: { title: '评论管理', icon: 'form' }
+        meta: { title: '评论管理', icon: 'form', auth: true }
       }
     ]
   },
@@ -229,7 +229,7 @@ export const constantRoutes = [
         path: 'index',
         name: 'Message',
         component: () => import('@/views/message/index'),
-        meta: { title: '留言板', icon: 'form' }
+        meta: { title: '留言板', icon: 'form', auth: true }
       }
     ]
   },
@@ -242,7 +242,7 @@ export const constantRoutes = [
         path: 'index',
         name: 'About',
         component: () => import('@/views/about/index'),
-        meta: { title: '关于我', icon: 'form' }
+        meta: { title: '关于我', icon: 'form', auth: true }
       }
     ]
   },

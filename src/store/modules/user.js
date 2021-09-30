@@ -14,9 +14,9 @@ const getDefaultState = () => {
 const state = getDefaultState()
 
 const mutations = {
-  // RESET_STATE: (state) => {
-  //   Object.assign(state, getDefaultState())
-  // },
+  RESET_STATE: (state) => {
+    Object.assign(state, getDefaultState())
+  },
   // SET_TOKEN: (state, token) => {
   //   state.token = token
   // },
@@ -52,35 +52,52 @@ const actions = {
   // get user info
   getInfo({ commit, state }) {
     return new Promise((resolve, reject) => {
-      getInfo(state.token).then(response => {
-        const { data } = response
 
-        if (!data) {
-          return reject('Verification failed, please Login again.')
+      getInfo().then(res => {
+        if (typeof res == "string") {
+          res = JSON.parse(res)
+          if (res.coee == 401) {
+            reject(res.msg);     
+          }
+        } else {
+          commit("SET_USER", res);
+          resolve();
         }
-
-        const { name, avatar } = data
-
-        commit('SET_NAME', name)
-        commit('SET_AVATAR', avatar)
-        resolve(data)
-      }).catch(error => {
-        reject(error)
       })
+      
+    //   getInfo(state.token).then(response => {
+    //     const { data } = response
+
+    //     if (!data) {
+    //       return reject('Verification failed, please Login again.')
+    //     }
+
+    //     const { name, avatar } = data
+
+    //     commit('SET_NAME', name)
+    //     commit('SET_AVATAR', avatar)
+    //     resolve(data)
+    //   }).catch(error => {
+    //     reject(error)
+    //   })
     })
   },
 
   // user logout
   logout({ commit, state }) {
     return new Promise((resolve, reject) => {
-      logout(state.token).then(() => {
-        removeToken() // must remove  token  first
-        resetRouter()
-        commit('RESET_STATE')
-        resolve()
-      }).catch(error => {
-        reject(error)
-      })
+      removeToken();
+      resetRouter();
+      commit("RESET_STATE");
+      resolve();
+      // logout(state.token).then(() => {
+      //   removeToken() // must remove  token  first
+      //   resetRouter()
+      //   commit('RESET_STATE')
+      //   resolve()
+      // }).catch(error => {
+      //   reject(error)
+      // })
     })
   },
 
