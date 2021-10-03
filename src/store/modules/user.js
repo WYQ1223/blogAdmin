@@ -38,7 +38,7 @@ const actions = {
       login(userInfo).then(res => {
         const { data } = res ;
         if (data) {
-          commit(SET_USER, data);
+          commit("SET_USER", data);
           resolve();
         } else {
           reject(res);
@@ -55,12 +55,12 @@ const actions = {
 
       getInfo().then(res => {
         if (typeof res == "string") {
-          res = JSON.parse(res)
-          if (res.coee == 401) {
+          res = JSON.parse(res);
+          if (res.code == 401) {
             reject(res.msg);     
           }
         } else {
-          commit("SET_USER", res);
+          commit("SET_USER", res.data);
           resolve();
         }
       })

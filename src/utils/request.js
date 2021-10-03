@@ -68,9 +68,8 @@ service.interceptors.response.use(
     // } else {
     //   return res
     // }
-
-    if (response.headers.authentation) {
-      localStorage.adminToken = response.headers.authentation;
+    if (response.headers.authentication) {
+      localStorage.adminToken = response.headers.authentication;
     }
     return response.data
   },

@@ -18,11 +18,11 @@ router.beforeEach(async(to, from, next) => {
   document.title = getPageTitle(to.meta.title)
 
   // determine whether the user has logged in
-  const hasToken = getToken()
+  // const hasToken = getToken()
 
   const hasGetUserInfo = store.getters.user;
 
-  if (to.meta.autn) {
+  if (to.meta.auth) {
     if (hasGetUserInfo) {
       next();
     } else {
@@ -35,11 +35,11 @@ router.beforeEach(async(to, from, next) => {
           await store.dispatch("user/resetToken");
           Message.error("登录过期，请重新登录");
           next(`/login?redirect=${to.path}`);
-          Nprogress.done();
+          NProgress.done();
         }
       } else {
         next(`/login?redirect=${to.path}`);
-        Nprogress.done();
+        NProgress.done();
       }
     }
   } else {

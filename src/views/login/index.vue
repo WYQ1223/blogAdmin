@@ -61,6 +61,7 @@
             name="captcha"
             tabindex="3"
             auto-complete="on"
+            @keyup.enter.native="handleLogin"
           ></el-input>
         </el-form-item>
         <div class="captcha-img" @click="handleShowCaptcha" v-html="svg"></div>
@@ -121,21 +122,17 @@ export default {
         loginId: "",
         loginPwd: "",
         captcha: "",
-        checked: true
+        checked: true,
       },
       loginRules: {
-        loginId: [
-          { required: true, tirgger: "blur", message: "请输入账号" }
-        ],
+        loginId: [{ required: true, tirgger: "blur", message: "请输入账号" }],
         loginPwd: [
           { required: true, tirgger: "blur", message: "请输入密码" },
           // { min: 8, max: 15, message: "长度需要在 8~15 字符之间", tirgger: "blur" },
           // { validator: checkPassword, message: "不符合要求", trigger: "blur" }
         ],
-        captcha: [
-          { required: true, tirgger: "blur", message: "请输入验证码" }
-        ]
-      }
+        captcha: [{ required: true, tirgger: "blur", message: "请输入验证码" }],
+      },
     };
   },
   watch: {
@@ -173,7 +170,7 @@ export default {
               this.$router.push({ path: this.redirect || "/" });
               this.loading = false;
             })
-            .catch(err => {
+            .catch((err) => {
               if (typeof err == "string") {
                 this.$message.error("验证码错误");
               } else {
@@ -183,16 +180,13 @@ export default {
               this.loginForm.captcha = "";
               this.loading = false;
             });
-        } else {
-          console.log("error submit!!");
-          return false;
         }
       });
     },
     handleShowCaptcha() {
-      getCaptcha().then(res => {
+      getCaptcha().then((res) => {
         this.svg = res;
-      })
+      });
     },
   },
 };
