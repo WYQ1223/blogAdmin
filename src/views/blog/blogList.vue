@@ -54,7 +54,11 @@
         label="所属分类"
         width="100"
         align="center"
-      ></el-table-column>
+      >
+      <template slot-scope="{ row }">
+        {{ row.category ? row.category.name : "未分类" }}
+      </template>
+      </el-table-column>
       <el-table-column
         prop="createDate"
         label="创建时间"
@@ -67,7 +71,7 @@
       </el-table-column>
       <el-table-column label="操作" fixed="right" width="120" align="center">
         <template slot-scope="{ row }">
-          <el-tooltip content="编辑" placement="top" :hide-after="1000">
+          <el-tooltip content="编辑" placement="top">
             <el-button
               type="warning"
               icon="el-icon-edit"
@@ -168,11 +172,11 @@ export default {
         }
       });
     },
-    handleJump(data) {
-      window.open(`${frontEnd_URL}/article/${data.id}`);
+    handleJump(blogInfo) {
+      window.open(`${frontEnd_URL}/article/${blogInfo.id}`);
     },
-    handleModify(data) {},
-    handleDelete(data) {
+    handleModify(blogInfo) {},
+    handleDelete(blogInfo) {
       this.$confirm(
         "删除文章后，该文章相关的所有评论也会一并删除，是否继续？",
         "是否删除此篇文章",
@@ -183,7 +187,7 @@ export default {
         }
       )
         .then(() => {
-          delOneBlog(data.id).then((res) => {
+          delOneBlog(blogInfo.id).then((res) => {
             if (res.data) {
               this.$message.success("删除成功");
               if (this.page > this.total) {
@@ -213,5 +217,8 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+.pag-con {
+  margin-top: 20px;
+}
 </style>

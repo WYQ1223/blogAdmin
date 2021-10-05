@@ -109,7 +109,7 @@
           type="primary"
           size="mini"
           @click="handleSave"
-          :loading="loading"
+          :loading="modifyLoading"
           >确定</el-button
         >
       </div>
@@ -137,7 +137,7 @@ export default {
           { required: true, message: "请输入描述内容", trigger: "blur" },
         ],
       },
-      loading: false,
+      modifyLoading: false,
     };
   },
   created() {
@@ -172,23 +172,22 @@ export default {
             type: "warning",
           })
             .then(() => {
-              this.loading = true;
+              this.modifyLoading = true;
               const temp = [...this.tableData];
               temp.forEach((item, index) => {
-                console.log();
                 if (item.id == this.infoForm.id) {
                   temp[index] = this.infoForm;
                 }
               });
               setBanner(temp)
                 .then(() => {
-                  this.loading = false;
+                  this.modifyLoading = false;
                   this.modifyVisible = false;
                   this.$message.success("修改成功！");
                   this.handleLoadData();
                 })
                 .catch(() => {
-                  this.loading = false;
+                  this.modifyLoading = false;
                 });
             })
             .catch(() => {});
