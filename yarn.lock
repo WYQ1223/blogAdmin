@@ -1128,6 +1128,44 @@
   resolved "https://repo.huaweicloud.com/repository/npm/@soda/get-current-script/-/get-current-script-1.0.2.tgz#a53515db25d8038374381b73af20bb4f2e508d87"
   integrity sha512-T7VNNlYVM1SgQ+VsMYhnDkcGmWhQdL0bDyGm5TlQ3GBXnJscEClUUOKduWTmm2zCnvNLC1hc3JpuXjs/nFOc5w==
 
+"@toast-ui/chart@^4.1.4":
+  version "4.4.0"
+  resolved "https://repo.huaweicloud.com/repository/npm/@toast-ui/chart/-/chart-4.4.0.tgz#fd65a424855de7e638dc68e5b7e069b595e0b547"
+  integrity sha512-bU5xZnSA2nQ0VnSVVnbQwrNS0qfGyJ/c2P5oxHN8RR4AgSAPqpNZ2OsQBHj/6ZCnLs+hc4QVjWB+yC4o4dwA/w==
+
+"@toast-ui/editor-plugin-chart@^3.0.1":
+  version "3.0.1"
+  resolved "https://repo.huaweicloud.com/repository/npm/@toast-ui/editor-plugin-chart/-/editor-plugin-chart-3.0.1.tgz#3d1efe078abc4b28c315f2a9948cb05e7eade294"
+  integrity sha512-mdqJerDo836kxKZEa3B6NZOJLrb+acRMkPIanYo//9GFPJcllG7KFdZU+K0bSMapEED7W7OJCsOzM0VNThndHg==
+  dependencies:
+    "@toast-ui/chart" "^4.1.4"
+
+"@toast-ui/editor-plugin-code-syntax-highlight@^3.0.0":
+  version "3.0.0"
+  resolved "https://repo.huaweicloud.com/repository/npm/@toast-ui/editor-plugin-code-syntax-highlight/-/editor-plugin-code-syntax-highlight-3.0.0.tgz#a82a7b75f12386280be7efdc7c6f5bf5b48744f3"
+  integrity sha512-62XB3IcFgvRxVZzj2kTeQao0xACotv/mD6jScSDkWac2V0jkCsTh0kZRG4TSW5bGdKvx4xz3YjFm7gWgw1I/Aw==
+  dependencies:
+    prismjs "^1.23.0"
+
+"@toast-ui/editor-plugin-color-syntax@^3.0.1":
+  version "3.0.1"
+  resolved "https://repo.huaweicloud.com/repository/npm/@toast-ui/editor-plugin-color-syntax/-/editor-plugin-color-syntax-3.0.1.tgz#2a7e3fc24ef3329fad737d59750288d12eadbf5d"
+  integrity sha512-7IC3GHvxlxIc++zm+Zed3U55gNb8iWxXd/oDZLLGW+fmcOtg6fzB0mdfkinQTof69bCgTRvyR60XKxcRs0vQEQ==
+  dependencies:
+    tui-color-picker "^2.2.6"
+
+"@toast-ui/editor-plugin-table-merged-cell@^3.0.0":
+  version "3.0.0"
+  resolved "https://repo.huaweicloud.com/repository/npm/@toast-ui/editor-plugin-table-merged-cell/-/editor-plugin-table-merged-cell-3.0.0.tgz#5c66b4ec81d29b425a5418097677ca35a205c55c"
+  integrity sha512-aA7DGZtaPMxtzJxU1geKrLTxSK8oWzTz6VnRZdDCdOfMkoFEgddSeWqyu8rIEoONG16y4YyJFljuAW8loHwC0A==
+
+"@toast-ui/editor-plugin-uml@^3.0.1":
+  version "3.0.1"
+  resolved "https://repo.huaweicloud.com/repository/npm/@toast-ui/editor-plugin-uml/-/editor-plugin-uml-3.0.1.tgz#a4840733364c5a2a124be6c6400a73ac7aebd808"
+  integrity sha512-KKvTB++lJkogOSBgtgJqli5nW76/fgxh0CvsHqKh5WQu2r6O+BTGPBG6oRy9PBfJvwN1g8YZ4ZLQGXSXDrtm1w==
+  dependencies:
+    plantuml-encoder "^1.4.0"
+
 "@toast-ui/editor@^3.1.0":
   version "3.1.0"
   resolved "https://repo.huaweicloud.com/repository/npm/@toast-ui/editor/-/editor-3.1.0.tgz#48febab0b9102ad6e9fb2bd3ed3a1207003a6bd8"
@@ -8128,6 +8166,11 @@ pkg-dir@^4.1.0:
   dependencies:
     find-up "^4.0.0"
 
+plantuml-encoder@^1.4.0:
+  version "1.4.0"
+  resolved "https://repo.huaweicloud.com/repository/npm/plantuml-encoder/-/plantuml-encoder-1.4.0.tgz#7899302cf785de956bf1a167e15420feee5975f7"
+  integrity sha512-sxMwpDw/ySY1WB2CE3+IdMuEcWibJ72DDOsXLkSmEaSzwEUaYBT6DWgOfBiHGCux4q433X6+OEFWjlVqp7gL6g==
+
 pn@^1.1.0:
   version "1.1.0"
   resolved "https://repo.huaweicloud.com/repository/npm/pn/-/pn-1.1.0.tgz#e2f4cef0e219f463c179ab37463e4e1ecdccbafb"
@@ -8597,6 +8640,11 @@ pretty@2.0.0:
     condense-newlines "^0.2.1"
     extend-shallow "^2.0.1"
     js-beautify "^1.6.12"
+
+prismjs@^1.23.0:
+  version "1.25.0"
+  resolved "https://repo.huaweicloud.com/repository/npm/prismjs/-/prismjs-1.25.0.tgz#6f822df1bdad965734b310b315a23315cf999756"
+  integrity sha512-WCjJHl1KEWbnkQom1+SzftbtXMKQoezOCYs5rECqMN+jP+apI7ftoflyqigqzopSO3hMhTEb0mFClA8lkolgEg==
 
 process-nextick-args@~2.0.0:
   version "2.0.1"
@@ -10435,6 +10483,11 @@ tty-browserify@0.0.0:
   version "0.0.0"
   resolved "https://repo.huaweicloud.com/repository/npm/tty-browserify/-/tty-browserify-0.0.0.tgz#a157ba402da24e9bf957f9aa69d524eed42901a6"
   integrity sha1-oVe6QC2iTpv5V/mqadUk7tQpAaY=
+
+tui-color-picker@^2.2.6:
+  version "2.2.7"
+  resolved "https://repo.huaweicloud.com/repository/npm/tui-color-picker/-/tui-color-picker-2.2.7.tgz#233cd501b17568ae6d604e06898b0c8553851186"
+  integrity sha512-y7gUe6PdVBq8ruZbiOkeaN7N/DX+ogVyLkK53OM4qW5Vrc4pDWYEKlnOBCsPODb4/RSzS9iTd6fXYirXxeakJA==
 
 tunnel-agent@^0.6.0:
   version "0.6.0"

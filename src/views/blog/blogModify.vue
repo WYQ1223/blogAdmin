@@ -1,6 +1,6 @@
 <template>
   <div class="app-container">
-    <blog-basic mode="add" />
+    <blog-basic mode="modify" />
   </div>
 </template>
 

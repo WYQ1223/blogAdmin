@@ -18,11 +18,11 @@ export function addBlogCategory(data) {
 }
 
 // 更新某一个文章分类
-export function updateOneBlogCategory(editInfo) {
+export function updateOneBlogCategory({ id, data }) {
   return request({
-    url: `/api/blogtype/${editInfo.id}`,
+    url: `/api/blogtype/${id}`,
     method: 'put',
-    data: editInfo.data
+    data
   })
 }
 

@@ -16,3 +16,29 @@ export function delOneBlog(id) {
     method: 'delete',
   })
 }
+
+// 添加博客文章
+export function addBlog(data) {
+  return request({
+    url: '/api/blog',
+    method: 'post',
+    data
+  })
+}
+
+// 编辑博客文章
+export function modifyBlog({ id, data }) {
+  return request({
+    url: `/api/blog/${id}`,
+    method: 'put',
+    data
+  })
+}
+
+// 查找某篇博客文章
+export function findOneBlog(id) {
+  return request({
+    url: `/api/blog/${id}`,
+    method: 'get',
+  })
+}

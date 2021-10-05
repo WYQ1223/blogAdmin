@@ -55,9 +55,9 @@
         width="100"
         align="center"
       >
-      <template slot-scope="{ row }">
-        {{ row.category ? row.category.name : "未分类" }}
-      </template>
+        <template slot-scope="{ row }">
+          {{ row.category ? row.category.name : "未分类" }}
+        </template>
       </el-table-column>
       <el-table-column
         prop="createDate"
@@ -175,7 +175,9 @@ export default {
     handleJump(blogInfo) {
       window.open(`${frontEnd_URL}/article/${blogInfo.id}`);
     },
-    handleModify(blogInfo) {},
+    handleModify({ id }) {
+      this.$router.push(`/blog/blogModify/${id}`);
+    },
     handleDelete(blogInfo) {
       this.$confirm(
         "删除文章后，该文章相关的所有评论也会一并删除，是否继续？",
